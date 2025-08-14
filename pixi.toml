@@ -1,0 +1,25 @@
+[workspace]
+channels = ["conda-forge"]
+name = "MonkeyOCR"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "3.10.*"
+
+[feature.gpu]
+system-requirements = { cuda = "12.6" }
+
+[feature.gpu.pypi-dependencies]
+paddlepaddle-gpu = {version = "==3.0.0",  index = "https://www.paddlepaddle.org.cn/packages/stable/cu126/" }
+
+[pypi-dependencies]
+# paddlex = { path = "MonkeyOCR/PaddleX", editable = true, extras = ["base"] }
+paddlex = { path = "MonkeyOCR/PaddleX",  extras = ["base"] }
+
+[environments]
+# cpu = { features = ["cpu"] }
+gpu = { features = ["gpu"] }
+default = { features = ["gpu"] }
