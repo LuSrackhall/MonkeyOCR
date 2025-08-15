@@ -73,3 +73,30 @@ Fixing the **Shared Memory Error** on **20/30/40 series / V100 ...** GPUs (Optio
 </details>
 </blockquote>
 
+# Step 3. 下载模型权重
+
+* 激活pixi环境
+
+  ```bash
+  pixi shell
+  ```
+
+* 下载模型权重 (注意, 在MonkeyOCR源码目录内执行以下命令)
+  * 从 Huggingface 下载
+
+    ```bash
+    pip install huggingface_hub
+
+    python tools/download_model.py -n MonkeyOCR  # or MonkeyOCR-pro-1.2B
+    ```
+
+  或者
+
+  * 从 ModelScope 下载
+
+    ```bash
+    pip install modelscope
+
+    python tools/download_model.py -t modelscope -n MonkeyOCR  # or MonkeyOCR-pro-1.2B
+    ```
+
