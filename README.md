@@ -1,4 +1,4 @@
-# Step 1. Install PaddleX
+# Step 1. 安装MonkeyOCR和 PaddleX (CUDA支持、环境配置)
 
 * To install pixi you can run the following command in your terminal:
   * `curl -fsSL https://pixi.sh/install.sh | sh`
@@ -29,11 +29,11 @@
   
   * `pixi i`
   
-# Step 2. Install Inference Backend
+# Step 2. 安装推理后端 (CUDA支持、环境配置)
 
 MonkeyOCR项目官方推荐使用LMDeploy, 因此本部署仓库仅使用此方式进行部署。
 
-仍是执行`pixi i`命令下载依赖, 直到执行结果为 
+仍是执行`pixi i`命令下载依赖, 直到执行结果为
 
 > **✔ The default environment has been installed.**
 
