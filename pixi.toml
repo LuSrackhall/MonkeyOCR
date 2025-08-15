@@ -13,7 +13,7 @@ python = "3.10.*"
 system-requirements = { cuda = "12.6" }
 
 [feature.gpu.pypi-dependencies]
-paddlepaddle-gpu = {version = "==3.0.0",  index = "https://www.paddlepaddle.org.cn/packages/stable/cu126/" }
+paddlepaddle-gpu = { version = "==3.0.0", index = "https://www.paddlepaddle.org.cn/packages/stable/cu126/" }
 # CUDA 12.6
 # torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu126" }
 # torchvision = { version = "==0.21.0", index = "https://download.pytorch.org/whl/cu126" }
@@ -25,7 +25,7 @@ torchaudio = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu
 
 [pypi-dependencies]
 # paddlex = { path = "MonkeyOCR/PaddleX", editable = true, extras = ["base"] }
-paddlex = { path = "MonkeyOCR/PaddleX",  extras = ["base"] }
+paddlex = { path = "MonkeyOCR/PaddleX", extras = ["base"] }
 magic_pdf = { path = "MonkeyOCR", editable = true }
 # CUDA 12.6
 # lmdeploy = "==0.8.0"
@@ -37,9 +37,7 @@ lmdeploy = { url = "https://github.com/InternLM/lmdeploy/releases/download/v0.8.
 modelscope = ">=1.29.0, <2"
 
 [tool.pixi.pypi-options]
-extra-index-url = [
-    "https://download.pytorch.org/whl/cu118"
-]
+extra-index-url = ["https://download.pytorch.org/whl/cu118"]
 
 [environments]
 # cpu = { features = ["cpu"] }
