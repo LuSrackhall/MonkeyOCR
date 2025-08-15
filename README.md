@@ -28,3 +28,48 @@
 * 统一下载本步骤中所需的全部依赖:
   
   * `pixi i`
+  
+# Step 2. Install Inference Backend
+
+MonkeyOCR项目官方推荐使用LMDeploy, 因此本部署仓库仅使用此方式进行部署。
+
+仍是执行`pixi i`命令下载依赖, 直到执行结果为 
+
+> **✔ The default environment has been installed.**
+
+代表环境配置成功。
+
+<blockquote>
+<details>
+<summary>
+[!IMPORTANT]
+
+Fixing the **Shared Memory Error** on **20/30/40 series / V100 ...** GPUs (Optional)
+......
+</summary>
+
+ Our 3B model runs smoothly on the NVIDIA RTX 30/40 series. However, when using **LMDeploy** as the inference backend, you might run into compatibility issues on these GPUs — typically this error:
+ 
+ ```
+ triton.runtime.errors.OutOfResources: out of resource: shared memory
+ ```
+ 
+ To resolve this issue, apply the following patch:
+ 
+ ```bash
+ python tools/lmdeploy_patcher.py patch
+ ```
+ **Note:** This command modifies LMDeploy’s source code in your environment.
+ To undo the changes, simply run:
+ 
+ ```bash
+ python tools/lmdeploy_patcher.py restore
+ ```
+ 
+ Based on our tests on the **NVIDIA RTX 3090**, inference speed was **0.338 pages/second** using **LMDeploy** (with the patch applied), compared to only **0.015 pages/second** using **transformers**.
+ 
+ **Special thanks to [@pineking](https://github.com/pineking) for the solution!**
+
+</details>
+</blockquote>
+

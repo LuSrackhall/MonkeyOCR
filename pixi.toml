@@ -14,10 +14,32 @@ system-requirements = { cuda = "12.6" }
 
 [feature.gpu.pypi-dependencies]
 paddlepaddle-gpu = {version = "==3.0.0",  index = "https://www.paddlepaddle.org.cn/packages/stable/cu126/" }
+# CUDA 12.6
+# torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu126" }
+# torchvision = { version = "==0.21.0", index = "https://download.pytorch.org/whl/cu126" }
+# torchaudio = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu126" }
+# CUDA 11.8
+torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu118" }
+torchvision = { version = "==0.21.0", index = "https://download.pytorch.org/whl/cu118" }
+torchaudio = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu118" }
 
 [pypi-dependencies]
 # paddlex = { path = "MonkeyOCR/PaddleX", editable = true, extras = ["base"] }
 paddlex = { path = "MonkeyOCR/PaddleX",  extras = ["base"] }
+magic_pdf = { path = "MonkeyOCR", editable = true }
+# CUDA 12.6
+# lmdeploy = "==0.8.0"
+# CUDA 11.8
+# pip install https://github.com/InternLM/lmdeploy/releases/download/v0.8.0/lmdeploy-0.8.0+cu118-cp310-cp310-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
+# # 其中的 --extra-index-url https://download.pytorch.org/whl/cu118 我指定在了[tool.pixi.pypi-options]中
+lmdeploy = { url = "https://github.com/InternLM/lmdeploy/releases/download/v0.8.0/lmdeploy-0.8.0+cu118-cp310-cp310-manylinux2014_x86_64.whl" }
+# huggingface-hub = ">=0.34.4, <0.35"  # 两个模型下载渠道任选其一, 本部署选择使用modelscope来下载模型。
+modelscope = ">=1.29.0, <2"
+
+[tool.pixi.pypi-options]
+extra-index-url = [
+    "https://download.pytorch.org/whl/cu118"
+]
 
 [environments]
 # cpu = { features = ["cpu"] }
