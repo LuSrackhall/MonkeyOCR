@@ -100,3 +100,11 @@ Fixing the **Shared Memory Error** on **20/30/40 series / V100 ...** GPUs (Optio
     python tools/download_model.py -t modelscope -n MonkeyOCR  # or MonkeyOCR-pro-1.2B
     ```
 
+# 4. Inference、Gradio Demo、Fast API
+
+到此为止, 以全部下载安装并配置完毕。
+
+关于如何使用?
+
+请直接参考[MonkeyOCR官方项目仓库](https://github.com/Yuliang-Liu/MonkeyOCR)的指南进行后续使用。
+> 仅需确保激活Pixi虚拟环境, 且在MonkeyOCR源码目录下即可。
