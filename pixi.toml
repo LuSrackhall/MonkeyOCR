@@ -23,6 +23,8 @@ torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu118" 
 torchvision = { version = "==0.21.0", index = "https://download.pytorch.org/whl/cu118" }
 torchaudio = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu118" }
 
+# 依赖将会安装在.pixi/envs/default/bin 目录下, 可通过cat命令查看其入口文件内容, 或使用vim编辑器修改其入口文件内容。 
+# * 'which+依赖名称'可以查询依赖的安装路径。 因此可以使用 `cat $(which+依赖名称)` 或 `vi $(which+依赖名称)`
 [pypi-dependencies]
 # paddlex = { path = "MonkeyOCR/PaddleX", editable = true, extras = ["base"] }
 paddlex = { path = "MonkeyOCR/PaddleX", extras = ["base"] }
